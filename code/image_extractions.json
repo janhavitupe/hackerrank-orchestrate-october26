@@ -1,0 +1,124 @@
+{
+  "_about": "Structured transcription of every screenshot under dataset/evidence/images, produced once with a multimodal model (Claude, claude-opus-5-5) and cached so the pipeline never re-sends images. Each image is an internal product screen; 'focus_records' are the resources the screen is about (page title / detail panel). Rows that belong to other people are recorded only when they are look-alike decoys.",
+  "images": [
+    {
+      "file_id": "evidence_04",
+      "file_path": "evidence/images/account_admin_console_20260926.png",
+      "screen": "Customer Operations > Customers > Haruka Sato (user_11 · account_5762)",
+      "focus_records": [
+        {"resource_id": "account_5762", "system": "account_service", "category": "USER_PROFILE", "present": true,
+         "stored_identifiers": {"full_name": "Haruka Sato", "email": "haruka.s1838@zoho.com", "phone": "+81 90 7610 2507"},
+         "references": {"customer_reference": "user_11"}}
+      ],
+      "notes": "Live customer profile with orders ORD-20265762 / ORD-20265518; side panel references support case CS-8538 (support_9538)."
+    },
+    {
+      "file_id": "evidence_09",
+      "file_path": "evidence/images/search_index_inspector_20260901.png",
+      "screen": "Search Console > Customer Search, query email:g.silva76@gmail.com, 2 hits",
+      "focus_records": [
+        {"resource_id": "search_428", "system": "search_service", "category": "SEARCH_INDEX_ENTRY", "present": true,
+         "stored_identifiers": {"display_name": "Gabriel Silva", "email": "g.silva76@gmail.com"},
+         "references": {"customer_reference": "user_13"}},
+        {"resource_id": "search_1874", "system": "search_service", "category": "SEARCH_INDEX_ENTRY", "present": true,
+         "stored_identifiers": {"email": "g.silva76.jr@gmail.com"}, "references": {}}
+      ],
+      "notes": "search_1874 is a look-alike address (g.silva76.jr) with no customer reference."
+    },
+    {
+      "file_id": "evidence_14",
+      "file_path": "evidence/images/connector_management_console_20260807.png",
+      "screen": "BridgeOps > Connections (continuous sync to customer_analytics_warehouse)",
+      "focus_records": [
+        {"resource_id": "data_flow_1121", "system": "integration_service", "category": "DATA_FLOW", "enabled": true,
+         "stored_identifiers": {"subject_selector": "jain.aditi@gmail.com"}, "references": {}},
+        {"resource_id": "data_flow_9846", "system": "integration_service", "category": "DATA_FLOW", "enabled": true,
+         "stored_identifiers": {"subject_selector": "lucia-torres@gmail.com"}, "references": {}}
+      ],
+      "notes": "Both connectors Healthy, mode Continuous, delivering events at 07:59 UTC."
+    },
+    {
+      "file_id": "evidence_19",
+      "file_path": "evidence/images/analytics_profile_view_20260713.png",
+      "screen": "Pulse Analytics > Users > Omar Darwish (user_20 · analytics_7438 · darwish.omar@icloud.com)",
+      "focus_records": [
+        {"resource_id": "analytics_7438", "system": "analytics_platform", "category": "ANALYTICS_PROFILE", "present": true,
+         "stored_identifiers": {"full_name": "Omar Darwish", "email": "darwish.omar@icloud.com"},
+         "references": {"customer_reference": "user_20"}}
+      ]
+    },
+    {
+      "file_id": "evidence_23",
+      "file_path": "evidence/images/customer_export_console_20260618.png",
+      "screen": "Customer Download Center > Data exports",
+      "focus_records": [
+        {"resource_id": "export_1260", "system": "export_service", "category": "USER_EXPORT", "present": true,
+         "stored_identifiers": {"owner_email": "ingrid.dahl@outlook.com"}, "references": {}}
+      ],
+      "notes": "export_1260 status Ready, expires 25 Jun 2026; other rows are staff test exports."
+    },
+    {
+      "file_id": "evidence_28",
+      "file_path": "evidence/images/support_ticket_console_20260524.png",
+      "screen": "Helpline Console > CS-5034 Where is my delivery? (support_1034)",
+      "focus_records": [
+        {"resource_id": "support_1034", "system": "support_platform", "category": "SUPPORT_MESSAGE", "present": true,
+         "stored_identifiers": {"requester_name": "Kofi Agyeman", "requester_email": "kagyeman8947@fastmail.com"},
+         "references": {}}
+      ],
+      "notes": "Conversation also contains agent Maya Chen and order ORD-20265034 context (shared context that must be retained -> redact)."
+    },
+    {
+      "file_id": "evidence_32",
+      "file_path": "evidence/images/backup_restore_console_20260429.png",
+      "screen": "Vault Recovery Manager > Customer-platform archives",
+      "focus_records": [
+        {"resource_id": "backup_9287", "system": "backup_service", "category": "BACKUP_ARCHIVE", "present": true,
+         "restore_allowed": true,
+         "stored_identifiers": {"customer_email": "areed1433@gmail.com"}, "references": {}}
+      ],
+      "notes": "Archive restorable (no deletion block shown; recent restores of sibling archives completed)."
+    },
+    {
+      "file_id": "evidence_37",
+      "file_path": "evidence/images/security_audit_explorer_20260905.png",
+      "screen": "Sentinel > Account events, subject filter user_03, detail panel audit_record_003",
+      "focus_records": [
+        {"resource_id": "audit_record_003", "system": "security_service", "category": "SECURITY_AUDIT_LOG", "present": true,
+         "stored_identifiers": {}, "references": {"subject_reference": "user_03"}}
+      ],
+      "notes": "Signed account_closure_recorded event, integrity valid, journal 2026-Q3."
+    },
+    {
+      "file_id": "evidence_42",
+      "file_path": "evidence/images/deleted_account_reference_20260310.png",
+      "screen": "Customer Reference Registry > user_17 (Retained reference)",
+      "focus_records": [
+        {"resource_id": "tombstone_17", "system": "identity_service", "category": "ACCOUNT_TOMBSTONE", "present": true,
+         "stored_identifiers": {}, "references": {"subject_reference": "user_17"}}
+      ],
+      "notes": "Only the stable key user_17 and links to orders/support/finance are shown; no name, email, phone or hash."
+    },
+    {
+      "file_id": "evidence_46",
+      "file_path": "evidence/images/object_storage_browser_20260213.png",
+      "screen": "Nimbus Object Storage > northstar-customer-data / support-attachments / 2026 / 02",
+      "focus_records": [
+        {"resource_id": "object_19", "system": "object_storage", "category": "SUPPORT_ATTACHMENT", "present": true,
+         "stored_identifiers": {}, "references": {}}
+      ],
+      "notes": "delivery_confirmation_19.pdf, v3, uploaded by support-service on 12 Feb 2026."
+    },
+    {
+      "file_id": "evidence_60",
+      "file_path": "evidence/images/marketing_profile_console.png",
+      "screen": "Audience Operations > Soo-jin Park (marketing_001)",
+      "focus_records": [
+        {"resource_id": "marketing_001", "system": "marketing_platform", "category": "MARKETING_PROFILE", "present": true,
+         "stored_identifiers": {"full_name": "Soo-jin Park", "email": "sj.park@naver.com", "phone": "+82 10-5837-9451"},
+         "references": {}}
+      ],
+      "notes": "Live profile refreshed 15 Sep 2026; identity shown does not match any identifier of the catalog-linked user."
+    }
+  ]
+}

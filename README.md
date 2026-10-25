@@ -1,5 +1,9 @@
 # HackerRank Orchestrate - October 2026
 
+> **Solution:** run `python code/main.py` from the repository root; it writes `output.csv` (518 rows) and
+> `code/evaluation/usage_report.md`. Architecture, setup and evaluation are documented in
+> [`code/README.md`](./code/README.md) and [`code/evaluation/evaluation_report.md`](./code/evaluation/evaluation_report.md).
+
 ## Ghost Data Still Exists
 
 Build an AI agent that audits whether a user's personal data was actually deleted.
